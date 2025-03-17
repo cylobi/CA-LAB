@@ -1,0 +1,13 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace inst EXE_stage_reg_0 -pg 1 -lvl 2 -y 100 -defaultsOSRD
+preplace inst MEM_stage_reg_0 -pg 1 -lvl 2 -y 780 -defaultsOSRD
+preplace inst ID_stage_reg_0 -pg 1 -lvl 2 -y 270 -defaultsOSRD
+preplace inst IF_stage_0 -pg 1 -lvl 2 -y 600 -defaultsOSRD
+preplace inst IF_stage_reg_0 -pg 1 -lvl 1 -y 400 -defaultsOSRD
+levelinfo -pg 1 -20 170 540 730 -top 0 -bot 880
+"
+}
+0

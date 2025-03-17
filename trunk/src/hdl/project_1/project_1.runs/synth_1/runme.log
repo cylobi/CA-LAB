@@ -1,0 +1,399 @@
+
+*** Running vivado
+    with args -log Top_level.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_level.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Top_level.tcl -notrace
+Command: synth_design -top Top_level -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6392 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 435.426 ; gain = 97.332
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top_level' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/top_level.v:1]
+INFO: [Synth 8-6157] synthesizing module 'IF_stage' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Mux2To1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/mux.v:1]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Mux2To1' (1#1) [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/mux.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Register' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/register.v:1]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Register' (2#1) [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Adder' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/adder.v:1]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Adder' (3#1) [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/adder.v:1]
+WARNING: [Synth 8-3848] Net branchTacken in module/entity IF_stage does not have driver. [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'IF_stage' (4#1) [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage.v:1]
+WARNING: [Synth 8-689] width (1) of port connection 'pc' does not match port width (32) of module 'IF_stage' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/top_level.v:16]
+INFO: [Synth 8-6157] synthesizing module 'IF_stage_reg' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage_reg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'IF_stage_reg' (5#1) [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage_reg.v:1]
+WARNING: [Synth 8-689] width (1) of port connection 'pc' does not match port width (32) of module 'IF_stage_reg' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/top_level.v:24]
+WARNING: [Synth 8-350] instance 'if_reg' of module 'IF_stage_reg' requires 8 connections, but only 5 given [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/top_level.v:20]
+INFO: [Synth 8-6157] synthesizing module 'ID_stage_reg' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/ID_stage_reg.v:1]
+WARNING: [Synth 8-3848] Net freeze in module/entity ID_stage_reg does not have driver. [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/ID_stage_reg.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'ID_stage_reg' (6#1) [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/ID_stage_reg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'EXE_stage_reg' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:1]
+WARNING: [Synth 8-689] width (33) of port connection 'in1' does not match port width (32) of module 'Register' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:13]
+WARNING: [Synth 8-689] width (33) of port connection 'in2' does not match port width (32) of module 'Register' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:14]
+WARNING: [Synth 8-689] width (1) of port connection 'out1' does not match port width (32) of module 'Register' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:17]
+WARNING: [Synth 8-689] width (1) of port connection 'out2' does not match port width (32) of module 'Register' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'EXE_stage_reg' (7#1) [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:1]
+WARNING: [Synth 8-350] instance 'exe_stage_reg' of module 'EXE_stage_reg' requires 7 connections, but only 6 given [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/top_level.v:37]
+INFO: [Synth 8-6157] synthesizing module 'MEM_stage_reg' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:1]
+WARNING: [Synth 8-689] width (1) of port connection 'out1' does not match port width (32) of module 'Register' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:18]
+WARNING: [Synth 8-689] width (1) of port connection 'out2' does not match port width (32) of module 'Register' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_stage_reg' (8#1) [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:1]
+WARNING: [Synth 8-350] instance 'mem_stage_reg' of module 'MEM_stage_reg' requires 7 connections, but only 6 given [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/top_level.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'Top_level' (9#1) [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/top_level.v:1]
+WARNING: [Synth 8-3331] design EXE_stage_reg has unconnected port EXE_in1[32]
+WARNING: [Synth 8-3331] design EXE_stage_reg has unconnected port EXE_in2[32]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[31]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[30]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[29]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[28]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[27]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[26]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[25]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[24]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[23]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[22]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[21]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[20]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[19]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[18]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[17]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[16]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[15]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[14]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[13]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[12]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[11]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[10]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[9]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[8]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[7]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[6]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[5]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[4]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[3]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[2]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[1]
+WARNING: [Synth 8-3331] design IF_stage_reg has unconnected port branchAddress[0]
+WARNING: [Synth 8-3331] design IF_stage has unconnected port branchTaken
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 491.684 ; gain = 153.590
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 491.684 ; gain = 153.590
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 491.684 ; gain = 153.590
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 491.684 ; gain = 153.590
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 12    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Mux2To1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Register 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module Adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design Top_level has port out1[31] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[30] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[29] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[28] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[27] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[26] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[25] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[24] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[23] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[22] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[21] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[20] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[19] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[18] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[17] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[16] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[15] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[14] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[13] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[12] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[11] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[10] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[9] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[8] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[7] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[6] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[5] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[4] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[3] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[2] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out1[1] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[31] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[30] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[29] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[28] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[27] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[26] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[25] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[24] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[23] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[22] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[21] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[20] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[19] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[18] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[17] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[16] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[15] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[14] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[13] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[12] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[11] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[10] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[9] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[8] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[7] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[6] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[5] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[4] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[3] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[2] driven by constant 0
+WARNING: [Synth 8-3917] design Top_level has port out2[1] driven by constant 0
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchTaken
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[31]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[30]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[29]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[28]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[27]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[26]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[25]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[24]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[23]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[22]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[21]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[20]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[19]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[18]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[17]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[16]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[15]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[14]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[13]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[12]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[11]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[10]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[9]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[8]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[7]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[6]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[5]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[4]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[3]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[2]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[1]
+WARNING: [Synth 8-3331] design Top_level has unconnected port branchAddress[0]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 621.250 ; gain = 283.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 621.250 ; gain = 283.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 621.922 ; gain = 283.828
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 621.922 ; gain = 283.828
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 621.922 ; gain = 283.828
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 621.922 ; gain = 283.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 621.922 ; gain = 283.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 621.922 ; gain = 283.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 621.922 ; gain = 283.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |    64|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    64|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 621.922 ; gain = 283.828
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 143 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 621.922 ; gain = 283.828
+Synthesis Optimization Complete : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 621.922 ; gain = 283.828
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 744.527 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+25 Infos, 143 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 744.527 ; gain = 419.492
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 744.527 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.runs/synth_1/Top_level.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_level_utilization_synth.rpt -pb Top_level_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 11 15:23:40 2025...
