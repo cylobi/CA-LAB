@@ -5,12 +5,8 @@ Using 2 slave threads.
 Starting static elaboration
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 33 for port 'EXE_in1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/sim/design_1.v:113]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 33 for port 'EXE_in2' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/sim/design_1.v:114]
-WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'in1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:13]
-WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'in2' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:14]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:17]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out2' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:18]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:18]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out2' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:19]
+WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'in1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:15]
+WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'in2' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:16]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v" Line 1. Module EXE_stage_reg doesn't have a timescale but at least one module in design has a timescale.

@@ -1,4 +1,5 @@
 -makelib ies_lib/xil_defaultlib -sv \
+  "E:/VIVADO/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
   "E:/VIVADO/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib ies_lib/xpm \
@@ -31,6 +32,8 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xlslice_0_0/sim/design_1_xlslice_0_0.v" \
   "../../../bd/design_1/ip/design_1_xlconstant_2_0/sim/design_1_xlconstant_2_0.v" \
+  "../../../bd/design_1/ip/design_1_ila_0_0/sim/design_1_ila_0_0.v" \
+  "../../../bd/design_1/ip/design_1_debouncer_0_0/sim/design_1_debouncer_0_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

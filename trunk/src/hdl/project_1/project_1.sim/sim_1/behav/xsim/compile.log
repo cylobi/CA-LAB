@@ -8,15 +8,10 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/univrsity/CAlab/CA-LAB/trunk/src
 INFO: [VRFC 10-311] analyzing module IF_stage
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/ID_stage_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ID_stage_reg
-INFO: [VRFC 10-2458] undeclared symbol freeze, assumed default net type wire [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/ID_stage_reg.v:16]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module EXE_stage_reg
-INFO: [VRFC 10-2458] undeclared symbol EXERegout1, assumed default net type wire [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:17]
-INFO: [VRFC 10-2458] undeclared symbol EXERegout2, assumed default net type wire [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:18]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MEM_stage_reg
-INFO: [VRFC 10-2458] undeclared symbol MEMRegout1, assumed default net type wire [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:18]
-INFO: [VRFC 10-2458] undeclared symbol MEMRegout2, assumed default net type wire [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:19]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IF_stage_reg
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_IF_stage_0_1/sim/design_1_IF_stage_0_1.v" into library xil_defaultlib

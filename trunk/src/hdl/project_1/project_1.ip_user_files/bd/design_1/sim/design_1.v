@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Tue Apr 15 13:38:50 2025
+//Date        : Tue Apr 15 14:55:21 2025
 //Host        : parsa running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -61,27 +61,11 @@ module IF_Stage_imp_V4PB19
         .Dout(xlslice_0_Dout));
 endmodule
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=13,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
-   (MEM_out1_0,
-    MEM_out2_0,
-    clk_0,
-    if_instruction,
-    if_instruction_original,
-    if_pc,
-    if_pc_original,
-    instructionmemout,
-    pcpipe_0,
+   (clk_0,
     rst_0);
-  output [31:0]MEM_out1_0;
-  output [31:0]MEM_out2_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_0 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_0, ASSOCIATED_RESET rst_0, CLK_DOMAIN design_1_clk_0, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input clk_0;
-  output [31:0]if_instruction;
-  output [31:0]if_instruction_original;
-  output [31:0]if_pc;
-  output [31:0]if_pc_original;
-  output [31:0]instructionmemout;
-  output [31:0]pcpipe_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RST_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RST_0, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input rst_0;
 
   wire [31:0]EXE_stage_reg_0_EXE_out1;
@@ -96,19 +80,13 @@ module design_1
   wire [31:0]MEM_stage_reg_0_MEM_out1;
   wire [31:0]MEM_stage_reg_0_MEM_out2;
   wire clk_0_1;
-  wire rst_0_1;
+  wire [0:0]rst_0_1;
+  wire rst_0_2;
   wire [0:0]xlconstant_0_dout;
   wire [31:0]xlconstant_1_dout;
 
-  assign MEM_out1_0[31:0] = MEM_stage_reg_0_MEM_out1;
-  assign MEM_out2_0[31:0] = MEM_stage_reg_0_MEM_out2;
   assign clk_0_1 = clk_0;
-  assign if_instruction[31:0] = IF_stage_reg_0_instruction;
-  assign if_instruction_original[31:0] = IF_stage_0_instruction;
-  assign if_pc[31:0] = IF_stage_reg_0_pc;
-  assign if_pc_original[31:0] = IF_stage_0_pc;
-  assign pcpipe_0[31:0] = IF_Stage_pcpipe_0;
-  assign rst_0_1 = rst_0;
+  assign rst_0_2 = rst_0;
   design_1_EXE_stage_reg_0_0 EXE_stage_reg_0
        (.EXE_in1(ID_stage_reg_0_ID_out1),
         .EXE_in2(ID_stage_reg_0_ID_out2),
@@ -149,6 +127,18 @@ module design_1
         .clk(clk_0_1),
         .freeze(xlconstant_0_dout),
         .rst(rst_0_1));
+  design_1_debouncer_0_0 debouncer_0
+       (.CLK_I(clk_0_1),
+        .SIGNAL_I(rst_0_2),
+        .SIGNAL_O(rst_0_1));
+  design_1_ila_0_0 ila_0
+       (.clk(clk_0_1),
+        .probe0(MEM_stage_reg_0_MEM_out1),
+        .probe1(MEM_stage_reg_0_MEM_out2),
+        .probe2(IF_stage_0_instruction),
+        .probe3(IF_Stage_pcpipe_0),
+        .probe4(IF_stage_0_pc),
+        .probe5(rst_0_1));
   design_1_xlconstant_0_0 xlconstant_0
        (.dout(xlconstant_0_dout));
   design_1_xlconstant_1_0 xlconstant_1

@@ -13,7 +13,7 @@ module ID_stage_reg(
         .rst(rst),
         .in1(ID_in1),
         .in2(ID_in2),
-        .ld(~freeze),
+        .ld(1'b1),
         .clr(1'b0),
         .out1(IDRegout1),
         .out2(IDRegout2)

@@ -7,12 +7,14 @@ module EXE_stage_reg(
     output [31:0] EXE_out2
 );
 
+wire [31:0] EXERegout1, EXERegout2;
+
    Register #(32) EXEReg(
         .clk(clk),
         .rst(rst),
         .in1(EXE_in1),
         .in2(EXE_in2),
-        .ld(~freeze),
+        .ld(1'b1),
         .clr(1'b0),
         .out1(EXERegout1),
         .out2(EXERegout2)

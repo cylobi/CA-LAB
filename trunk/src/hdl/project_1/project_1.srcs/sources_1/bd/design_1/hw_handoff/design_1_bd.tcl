@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# EXE_stage_reg, ID_stage_reg, IF_stage_reg, MEM_stage_reg, IF_stage
+# EXE_stage_reg, ID_stage_reg, IF_stage_reg, MEM_stage_reg, debouncer, IF_stage
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -261,15 +261,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set MEM_out1_0 [ create_bd_port -dir O -from 31 -to 0 MEM_out1_0 ]
-  set MEM_out2_0 [ create_bd_port -dir O -from 31 -to 0 MEM_out2_0 ]
   set clk_0 [ create_bd_port -dir I -type clk clk_0 ]
-  set if_instruction [ create_bd_port -dir O -from 31 -to 0 if_instruction ]
-  set if_instruction_original [ create_bd_port -dir O -from 31 -to 0 if_instruction_original ]
-  set if_pc [ create_bd_port -dir O -from 31 -to 0 if_pc ]
-  set if_pc_original [ create_bd_port -dir O -from 31 -to 0 if_pc_original ]
-  set instructionmemout [ create_bd_port -dir O -from 31 -to 0 instructionmemout ]
-  set pcpipe_0 [ create_bd_port -dir O -from 31 -to 0 pcpipe_0 ]
   set rst_0 [ create_bd_port -dir I -type rst rst_0 ]
 
   # Create instance: EXE_stage_reg_0, and set properties
@@ -319,6 +311,36 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: debouncer_0, and set properties
+  set block_name debouncer
+  set block_cell_name debouncer_0
+  if { [catch {set debouncer_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $debouncer_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: ila_0, and set properties
+  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
+  set_property -dict [ list \
+   CONFIG.C_ENABLE_ILA_AXI_MON {false} \
+   CONFIG.C_MONITOR_TYPE {Native} \
+   CONFIG.C_NUM_OF_PROBES {6} \
+   CONFIG.C_PROBE0_TYPE {1} \
+   CONFIG.C_PROBE0_WIDTH {32} \
+   CONFIG.C_PROBE1_TYPE {1} \
+   CONFIG.C_PROBE1_WIDTH {32} \
+   CONFIG.C_PROBE2_TYPE {1} \
+   CONFIG.C_PROBE2_WIDTH {32} \
+   CONFIG.C_PROBE3_TYPE {1} \
+   CONFIG.C_PROBE3_WIDTH {32} \
+   CONFIG.C_PROBE4_TYPE {1} \
+   CONFIG.C_PROBE4_WIDTH {32} \
+   CONFIG.C_PROBE5_TYPE {2} \
+ ] $ila_0
+
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
@@ -332,23 +354,21 @@ proc create_root_design { parentCell } {
    CONFIG.CONST_WIDTH {32} \
  ] $xlconstant_1
 
-  # Create instance: xlconstant_2, and set properties
-  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
-
   # Create port connections
   connect_bd_net -net EXE_stage_reg_0_EXE_out1 [get_bd_pins EXE_stage_reg_0/EXE_out1] [get_bd_pins MEM_stage_reg_0/MEM_in1]
   connect_bd_net -net EXE_stage_reg_0_EXE_out2 [get_bd_pins EXE_stage_reg_0/EXE_out2] [get_bd_pins MEM_stage_reg_0/MEM_in2]
   connect_bd_net -net ID_stage_reg_0_ID_out1 [get_bd_pins EXE_stage_reg_0/EXE_in1] [get_bd_pins ID_stage_reg_0/ID_out1]
   connect_bd_net -net ID_stage_reg_0_ID_out2 [get_bd_pins EXE_stage_reg_0/EXE_in2] [get_bd_pins ID_stage_reg_0/ID_out2]
-  connect_bd_net -net IF_Stage_pcpipe_0 [get_bd_ports pcpipe_0] [get_bd_pins IF_Stage/pcpipe_0] [get_bd_pins IF_stage_reg_0/pcin]
-  connect_bd_net -net IF_stage_0_instruction [get_bd_ports if_instruction_original] [get_bd_pins IF_Stage/instruction] [get_bd_pins IF_stage_reg_0/instructionin]
-  connect_bd_net -net IF_stage_0_pc [get_bd_ports if_pc_original] [get_bd_pins IF_Stage/pc]
-  connect_bd_net -net IF_stage_reg_0_instruction [get_bd_ports if_instruction] [get_bd_pins ID_stage_reg_0/ID_in2] [get_bd_pins IF_stage_reg_0/instruction]
-  connect_bd_net -net IF_stage_reg_0_pc [get_bd_ports if_pc] [get_bd_pins ID_stage_reg_0/ID_in1] [get_bd_pins IF_stage_reg_0/pc]
-  connect_bd_net -net MEM_stage_reg_0_MEM_out1 [get_bd_ports MEM_out1_0] [get_bd_pins MEM_stage_reg_0/MEM_out1]
-  connect_bd_net -net MEM_stage_reg_0_MEM_out2 [get_bd_ports MEM_out2_0] [get_bd_pins MEM_stage_reg_0/MEM_out2]
-  connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins EXE_stage_reg_0/clk] [get_bd_pins ID_stage_reg_0/clk] [get_bd_pins IF_Stage/clk_0] [get_bd_pins IF_stage_reg_0/clk] [get_bd_pins MEM_stage_reg_0/clk]
-  connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins EXE_stage_reg_0/rst] [get_bd_pins ID_stage_reg_0/rst] [get_bd_pins IF_Stage/rst_0] [get_bd_pins IF_stage_reg_0/rst] [get_bd_pins MEM_stage_reg_0/rst]
+  connect_bd_net -net IF_Stage_pcpipe_0 [get_bd_pins IF_Stage/pcpipe_0] [get_bd_pins IF_stage_reg_0/pcin] [get_bd_pins ila_0/probe3]
+  connect_bd_net -net IF_stage_0_instruction [get_bd_pins IF_Stage/instruction] [get_bd_pins IF_stage_reg_0/instructionin] [get_bd_pins ila_0/probe2]
+  connect_bd_net -net IF_stage_0_pc [get_bd_pins IF_Stage/pc] [get_bd_pins ila_0/probe4]
+  connect_bd_net -net IF_stage_reg_0_instruction [get_bd_pins ID_stage_reg_0/ID_in2] [get_bd_pins IF_stage_reg_0/instruction]
+  connect_bd_net -net IF_stage_reg_0_pc [get_bd_pins ID_stage_reg_0/ID_in1] [get_bd_pins IF_stage_reg_0/pc]
+  connect_bd_net -net MEM_stage_reg_0_MEM_out1 [get_bd_pins MEM_stage_reg_0/MEM_out1] [get_bd_pins ila_0/probe0]
+  connect_bd_net -net MEM_stage_reg_0_MEM_out2 [get_bd_pins MEM_stage_reg_0/MEM_out2] [get_bd_pins ila_0/probe1]
+  connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins EXE_stage_reg_0/clk] [get_bd_pins ID_stage_reg_0/clk] [get_bd_pins IF_Stage/clk_0] [get_bd_pins IF_stage_reg_0/clk] [get_bd_pins MEM_stage_reg_0/clk] [get_bd_pins debouncer_0/CLK_I] [get_bd_pins ila_0/clk]
+  connect_bd_net -net rst_0_1 [get_bd_pins EXE_stage_reg_0/rst] [get_bd_pins ID_stage_reg_0/rst] [get_bd_pins IF_Stage/rst_0] [get_bd_pins IF_stage_reg_0/rst] [get_bd_pins MEM_stage_reg_0/rst] [get_bd_pins debouncer_0/SIGNAL_O] [get_bd_pins ila_0/probe5]
+  connect_bd_net -net rst_0_2 [get_bd_ports rst_0] [get_bd_pins debouncer_0/SIGNAL_I]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins EXE_stage_reg_0/freeze] [get_bd_pins IF_Stage/freeze] [get_bd_pins IF_stage_reg_0/freeze] [get_bd_pins MEM_stage_reg_0/freeze] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_pins IF_Stage/branchAddress] [get_bd_pins IF_stage_reg_0/branchAddress] [get_bd_pins xlconstant_1/dout]
 

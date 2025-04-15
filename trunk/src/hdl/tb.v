@@ -8,14 +8,14 @@ module tb_design_1_wrapper;
     wire [31:0] if_instruction;
     wire [31:0] if_pc;
 
-    design_1_wrapper dut (
-        .clk_0(clk_0),
-        .rst_0(rst_0),
-        .MEM_out1_0(MEM_out1_0),
-        .MEM_out2_0(MEM_out2_0),
-        .if_instruction(if_instruction),
-        .if_pc(if_pc)
-    );
+//    design_1_wrapper dut (
+//        .clk_0(clk_0),
+//        .rst_0(rst_0),
+//        .MEM_out1_0(MEM_out1_0),
+//        .MEM_out2_0(MEM_out2_0),
+//        .if_instruction(if_instruction),
+//        .if_pc(if_pc)
+//    );
 
     initial begin
         clk_0 = 0;

@@ -2,16 +2,16 @@
 2018.3
 Dec  7 2018
 00:33:28
-D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v,1741692663,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v,,EXE_stage_reg,,,,,,,,
-D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/ID_stage_reg.v,1741692657,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v,,ID_stage_reg,,,,,,,,
+D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v,1744714871,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v,,EXE_stage_reg,,,,,,,,
+D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/ID_stage_reg.v,1744713778,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v,,ID_stage_reg,,,,,,,,
 D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage.v,1744711408,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/ID_stage_reg.v,,IF_stage,,,,,,,,
 D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage_reg.v,1741693472,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_IF_stage_0_1/sim/design_1_IF_stage_0_1.v,,IF_stage_reg,,,,,,,,
-D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v,1741692753,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage_reg.v,,MEM_stage_reg,,,,,,,,
+D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v,1744714324,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage_reg.v,,MEM_stage_reg,,,,,,,,
 D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/adder.v,1690226697,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/mux.v,,Adder,,,,,,,,
 D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/mux.v,1741086820,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/register.v,,Mux2To1,,,,,,,,
 D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_EXE_stage_reg_0_0/sim/design_1_EXE_stage_reg_0_0.v,1744111772,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_MEM_stage_reg_0_0/sim/design_1_MEM_stage_reg_0_0.v,,design_1_EXE_stage_reg_0_0,,,,,,,,
 D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_ID_stage_reg_0_0/sim/design_1_ID_stage_reg_0_0.v,1744111772,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_EXE_stage_reg_0_0/sim/design_1_EXE_stage_reg_0_0.v,,design_1_ID_stage_reg_0_0,,,,,,,,
-D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_IF_stage_0_1/sim/design_1_IF_stage_0_1.v,1744657967,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_ID_stage_reg_0_0/sim/design_1_ID_stage_reg_0_0.v,,design_1_IF_stage_0_1,,,,,,,,
+D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_IF_stage_0_1/sim/design_1_IF_stage_0_1.v,1744711730,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_ID_stage_reg_0_0/sim/design_1_ID_stage_reg_0_0.v,,design_1_IF_stage_0_1,,,,,,,,
 D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_IF_stage_reg_0_8/sim/design_1_IF_stage_reg_0_8.v,1744111772,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v,,design_1_IF_stage_reg_0_8,,,,,,,,
 D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_MEM_stage_reg_0_0/sim/design_1_MEM_stage_reg_0_0.v,1744111772,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_IF_stage_reg_0_8/sim/design_1_IF_stage_reg_0_8.v,,design_1_MEM_stage_reg_0_0,,,,,,,,
 D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v,1744710710,verilog,,D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/ip/design_1_xlslice_0_0/sim/design_1_xlslice_0_0.v,,design_1_blk_mem_gen_0_0,,,,,,,,
