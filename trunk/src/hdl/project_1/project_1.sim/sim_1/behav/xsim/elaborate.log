@@ -1,0 +1,62 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: E:/VIVADO/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 5a8691ed9f124f0eac1e96e2f1f6515b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xlconstant_v1_1_5 -L blk_mem_gen_v8_4_2 -L xlslice_v1_0_1 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_design_1_wrapper_behav xil_defaultlib.tb_design_1_wrapper xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 33 for port 'EXE_in1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/sim/design_1.v:113]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 33 for port 'EXE_in2' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/project_1/project_1.ip_user_files/bd/design_1/sim/design_1.v:114]
+WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'in1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:13]
+WARNING: [VRFC 10-3091] actual bit length 33 differs from formal bit length 32 for port 'in2' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:14]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:17]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out2' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v:18]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out1' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:18]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'out2' [D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v:19]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/EXE_stage_reg.v" Line 1. Module EXE_stage_reg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/ID_stage_reg.v" Line 1. Module ID_stage_reg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/mux.v" Line 1. Module Mux2To1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/adder.v" Line 1. Module Adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/IF_stage_reg.v" Line 1. Module IF_stage_reg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/MEM_stage_reg.v" Line 1. Module MEM_stage_reg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/univrsity/CAlab/CA-LAB/trunk/src/hdl/register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Register
+Compiling module xil_defaultlib.EXE_stage_reg
+Compiling module xil_defaultlib.design_1_EXE_stage_reg_0_0
+Compiling module xil_defaultlib.ID_stage_reg
+Compiling module xil_defaultlib.design_1_ID_stage_reg_0_0
+Compiling module xil_defaultlib.Mux2To1
+Compiling module xil_defaultlib.Adder
+Compiling module xil_defaultlib.IF_stage
+Compiling module xil_defaultlib.design_1_IF_stage_0_1
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_output_stage(...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_output_stage(...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_2.blk_mem_gen_v8_4_2(C_FAMILY="zyn...
+Compiling module xil_defaultlib.design_1_blk_mem_gen_0_0
+Compiling module xlslice_v1_0_1.xlslice_v1_0_1_xlslice(DIN_FROM=...
+Compiling module xil_defaultlib.design_1_xlslice_0_0
+Compiling module xil_defaultlib.IF_Stage_imp_V4PB19
+Compiling module xil_defaultlib.IF_stage_reg
+Compiling module xil_defaultlib.design_1_IF_stage_reg_0_8
+Compiling module xil_defaultlib.MEM_stage_reg
+Compiling module xil_defaultlib.design_1_MEM_stage_reg_0_0
+Compiling module xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(CON...
+Compiling module xil_defaultlib.design_1_xlconstant_0_0
+Compiling module xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(CON...
+Compiling module xil_defaultlib.design_1_xlconstant_1_0
+Compiling module xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(CON...
+Compiling module xil_defaultlib.design_1_xlconstant_2_0
+Compiling module xil_defaultlib.design_1
+Compiling module xil_defaultlib.design_1_wrapper
+Compiling module xil_defaultlib.tb_design_1_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_design_1_wrapper_behav

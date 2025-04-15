@@ -8,7 +8,7 @@ module Register #(
     output reg [N-1:0] out1,
     output reg [N-1:0] out2
 );
-    always @(posedge clk or negedge rst) begin
+    always @(posedge clk or posedge rst) begin
         if (rst) begin
             out1 <= {N{1'b0}};
             out2 <= {N{1'b0}};

@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../EXE_stage_reg.v" \
+"../../../../../ID_stage_reg.v" \
+"../../../../../IF_stage.v" \
+"../../../../../IF_stage_reg.v" \
+"../../../../../MEM_stage_reg.v" \
+"../../../../../adder.v" \
+"../../../../../mux.v" \
+"../../../../../register.v" \
+"../../../../../top_level.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
