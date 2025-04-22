@@ -1,9 +1,12 @@
-module top_level(
+module Top_level(
     input clk, rst,
-    input freeze,
     output [31:0] out1,
     output [31:0] out2
 );
+    // Hazard detection signals
+    wire hazard_detected;
+    wire freeze;
+    
     // IF stage wires
     wire [31:0] pc, instruction, pc_if_reg_out, instruction_if_reg_out;
     wire branch_taken;
@@ -17,7 +20,8 @@ module top_level(
     wire [3:0] dest_reg;
     wire [11:0] shift_operand;
     wire [23:0] signed_imm_24;
-    wire imm;
+    wire imm, two_src;
+    wire [3:0] src1, src2;
     
     // EXE stage wires
     wire [31:0] alu_result, branch_addr_calc;
@@ -36,6 +40,13 @@ module top_level(
     wire exe_reg_mem_read_out, exe_reg_mem_write_out, exe_reg_wb_enable_out;
     wire [3:0] exe_reg_dest_reg_out;
     
+    // MEM stage wires (for hazard detection)
+    wire [3:0] mem_dest_reg;
+    wire mem_wb_enable;
+    
+    // Assign freeze signal from hazard detection
+    assign freeze = hazard_detected;
+    
     // Status register
     reg [3:0] status_reg;
     always @(negedge clk or posedge rst) begin
@@ -44,6 +55,19 @@ module top_level(
         else if (status_update)
             status_reg <= status_bits;
     end
+    
+    // Hazard Detection Unit
+    HazardDetectionUnit hazard_unit(
+        .src1(src1),
+        .src2(src2),
+        .exe_dest(id_reg_dest_reg_out),
+        .mem_dest(mem_dest_reg),
+        .exe_wb_en(id_reg_wb_enable_out),
+        .mem_wb_en(mem_wb_enable),
+        .exe_mem_read(id_reg_mem_read_out),
+        .two_src(two_src),
+        .hazard_detected(hazard_detected)
+    );
     
     // IF Stage
     IF_stage if_stage(
@@ -78,7 +102,7 @@ module top_level(
         .instruction(instruction_if_reg_out),
         .wb_value(out1), // From WB stage
         .wb_dest(out2[3:0]), // From WB stage
-        .wb_en(exe_reg_wb_enable_out), // From WB stage
+        .wb_en(mem_wb_enable), // From MEM stage
         .status_bits(status_reg),
         .pc_out(id_pc_out),
         .val_rn(val_rn),
@@ -91,7 +115,11 @@ module top_level(
         .status_update(status_update),
         .dest_reg(dest_reg),
         .shift_operand(shift_operand),
-        .signed_imm_24(signed_imm_24)
+        .signed_imm_24(signed_imm_24),
+        .imm(imm),
+        .two_src(two_src),
+        .src1(src1),
+        .src2(src2)
     );
     
     // ID Stage Register
@@ -153,7 +181,12 @@ module top_level(
         .MEM_out2(memout2)
      );
     
+    // The rest of the pipeline stages would go here
+    // For this implementation, we'll assign MEM stage signals for hazard detection
+    assign mem_dest_reg = 4'b0; // Placeholder
+    assign mem_wb_enable = 1'b0; // Placeholder
+    
+    // Connect to outputs
     assign out1 = exe_reg_alu_result_out;
     assign out2 = {28'b0, exe_reg_dest_reg_out};
-
 endmodule

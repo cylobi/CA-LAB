@@ -16,7 +16,10 @@ module ID_stage(
     output status_update,
     output [3:0] dest_reg,
     output [11:0] shift_operand,
-    output [23:0] signed_imm_24
+    output [23:0] signed_imm_24,
+    output imm,
+    output two_src,              // New output signal for hazard detection
+    output [3:0] src1, src2      // Source register numbers for hazard detection
 );
 
     wire [3:0] rn, rm, rd;
@@ -24,7 +27,6 @@ module ID_stage(
     wire [3:0] opcode;
     wire S;
     wire [3:0] cond;
-    wire imm;
     
     wire [3:0] control_exe_cmd;
     wire control_mem_read, control_mem_write;
@@ -41,7 +43,7 @@ module ID_stage(
     assign S = instruction[20];
     assign rn = instruction[19:16];
     assign rd = instruction[15:12];
-    assign rm = (mem_write) ? rd : instruction[3:0]; // rm is rd for STR, otherwise it's the instruction[3:0]
+    assign rm = (control_mem_write) ? rd : instruction[3:0]; // rm is rd for STR, otherwise it's instruction[3:0]
     assign shift_operand = instruction[11:0];
     assign signed_imm_24 = instruction[23:0];
     
@@ -91,5 +93,13 @@ module ID_stage(
     
     // Pass PC
     assign pc_out = pc_in;
-
+    
+    // Hazard detection signals
+    assign src1 = rn;
+    assign src2 = rm;
+    
+    // Determine if instruction uses two source registers
+    // Instructions that use two sources: arithmetic/logical operations, STR
+    assign two_src = (mode == 2'b00 && opcode != 4'b1101 && opcode != 4'b1111) || // Not MOV or MVN
+                     (mode == 2'b01 && ~S); // STR instruction
 endmodule
